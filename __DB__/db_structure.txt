@@ -1,0 +1,19 @@
+barbequeue
+
+users
+	id INT PK AUTO_INCREMENT
+	username VARCHAR(128)
+	password VARCHAR(255)
+
+barbeques
+	id INT PK AUTO_INCREMENT
+	event_datetime DATETIME
+	description VARCHAR(128)
+	
+barbeques_participants
+	id INT PK AUTO_INCREMENT
+	id_barbeque INT FK (barbeques)
+	name VARCHAR(128)
+	contribution DECIMAL
+	paid BOOLEAN
+	

@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "715d7b3d-6a87-4cbb-b8d8-007c8b584b10",
+		"name": "barbequeue-trinca",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Barbeque",
+			"item": [
+				{
+					"name": "LIST ALL BARBEQUES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/barbeque/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"barbeque",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE BARBEQUE BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/barbeque/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"barbeque",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT BARBEQUE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Churras de inauguração\",\r\n    \"eventDateTime\": \"2020-06-10T18:00:00\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/barbeque/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"barbeque",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE BARBEQUE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Churras de inauguração updated\",\r\n    \"eventDateTime\": \"2020-06-12T18:00:00\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/barbeque/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"barbeque",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE BARBEQUE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/barbeque/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"barbeque",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Barbeque Participants",
+			"item": [
+				{
+					"name": "LIST ALL PARTICIPANTS  BY BBQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/participants/barbeque/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"participants",
+								"barbeque",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE PARTICIPANT BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/participants/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"participants",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "INSERT PARTICIPANT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"BarbequeId\": 1,\r\n    \"Name\": \"Eduardo Santana\",\r\n    \"Contribution\": 20.50,\r\n    \"Paid\": true\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/participants/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"participants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE PARTICIPANT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"BarbequeId\": 2,\r\n    \"Name\": \"André Treib\",\r\n    \"Contribution\": 50.50,\r\n    \"Paid\": false\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/participants/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"participants",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE BARBEQUE",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFuZHJlIiwibmJmIjoxNTkxNDA5ODIwLCJleHAiOjE1OTIwMTQ2MjAsImlhdCI6MTU5MTQwOTgyMH0.Z2n2-q9iMIQ1XtFL9_cSoOUZawzSBuQ4MHrygWSdphk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/participants/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"participants",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authenticate",
+			"item": [
+				{
+					"name": "LOGIN",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"andre\",\r\n    \"Password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/authenticate/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"authenticate",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
