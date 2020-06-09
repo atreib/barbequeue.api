@@ -22,6 +22,7 @@
 * Senha de acesso de qualquer usuário: `123456`
 * Collection do postman: `./__POSTMAN__`
 * Backup do banco: `./__DB__`
+* Swagger: `http://localhost:5000/swagger`
 
 # Antes de começar
 
@@ -33,6 +34,8 @@ values ('andre', '$2b$12$srrQ9ybGftCfmx7ejDynSu3pvvknkNB9fMJsAdSjgnOkWnZV/FwwK')
 
 > `insert into users(Username, Password)
 values ('prova', '$2b$12$srrQ9ybGftCfmx7ejDynSu3pvvknkNB9fMJsAdSjgnOkWnZV/FwwK');`
+
+* No arquivo `Startup.cs`, foi comentado uma parte do algoritmo que faz a geração automática do banco de dados através do Entity. Caso não queira fazer um import do .bacpac, pode-se utilizar esta função (linha 110).
 
 # Rodando o projeto
 
