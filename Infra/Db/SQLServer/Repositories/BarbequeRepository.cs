@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using barbequeue.api.Domain.Models;
 using barbequeue.api.Data.Protocols;
 using barbequeue.api.Infra.Db.SQLServer.Contexts;
+using System.Linq;
+using System;
 
 namespace barbequeue.api.Infra.Db.SQLServer.Repositories
 {
@@ -13,7 +15,11 @@ namespace barbequeue.api.Infra.Db.SQLServer.Repositories
 
         public async Task<IEnumerable<Barbeque>> ListAsync ()
         {
-            return await _context.Barbeques.Include(p => p.Participants).ToListAsync();
+            return await _context.Barbeques
+                .Include(p => p.Participants)
+                .Where(p => p.EventDateTime >= DateTime.Now)
+                .OrderBy(x => x.EventDateTime)
+                .ToListAsync();
         }
 
         public async Task<Barbeque> AddAsync (Barbeque barbeque)

@@ -16,6 +16,7 @@ namespace barbequeue.api.Infra.Db.SQLServer.Repositories
         {
             return await _context.BarbequeParticipants
                 .Where(x => x.BarbequeId == barbequeId)
+                .OrderBy(x => x.Name)
                 .ToListAsync();
         }
         
