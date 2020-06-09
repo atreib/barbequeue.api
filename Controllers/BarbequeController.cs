@@ -19,6 +19,13 @@ namespace barbequeue.api.Controllers
             _barbequeService = barbequeService;
         }
 
+        /// <summary>
+        /// Busca todos os churras que ainda não aconteceram (Data >= Hoje)
+        /// </summary>
+        /// <returns>Lista de churras</returns>
+        /// <response code="200">Retorna o array dos churras</response>
+        /// <response code="400">Parâmetros enviados estão incorretos</response>
+        /// <response code="422">Processamento encerrado, analise a mensagem retornada</response>
         [Route("")]
         [HttpGet]
         public async Task<IEnumerable<Barbeque>> GetAllAsync()
@@ -27,6 +34,13 @@ namespace barbequeue.api.Controllers
             return barbeques;
         }
 
+        /// <summary>
+        /// Busca um churras específico
+        /// </summary>
+        /// <returns>Model do churras solictado</returns>
+        /// <response code="200">Retorna o churras</response>
+        /// <response code="400">Parâmetros enviados estão incorretos</response>
+        /// <response code="422">Processamento encerrado, analise a mensagem retornada</response>
         [Route("{id:int}")]
         [HttpGet]
         public async Task<Barbeque> GetOneAsync(int id)
@@ -35,6 +49,13 @@ namespace barbequeue.api.Controllers
             return barbeque;
         }
 
+        /// <summary>
+        /// Insere um churras
+        /// </summary>
+        /// <returns>Model do churras inserido</returns>
+        /// <response code="200">Retorna o churras</response>
+        /// <response code="400">Parâmetros enviados estão incorretos</response>
+        /// <response code="422">Processamento encerrado, analise a mensagem retornada</response>
         [Route("")]
         [HttpPost]
         public async Task<ActionResult> InsertAsync ([FromBody]AddBarbequeModel model)
@@ -60,6 +81,13 @@ namespace barbequeue.api.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um churras específico
+        /// </summary>
+        /// <returns>Model do churras atualizado</returns>
+        /// <response code="200">Retorna o churras</response>
+        /// <response code="400">Parâmetros enviados estão incorretos</response>
+        /// <response code="422">Processamento encerrado, analise a mensagem retornada</response>
         [Route("{id:int}")]
         [HttpPut]
         public async Task<ActionResult> UpdateAsync (int id, [FromBody]AddBarbequeModel data)
@@ -86,6 +114,13 @@ namespace barbequeue.api.Controllers
             }
         }
 
+        /// <summary>
+        /// Remove um churras específico
+        /// </summary>
+        /// <returns>Mensagem informando o sucesso da operação</returns>
+        /// <response code="200">Texto simples informando o sucesso</response>
+        /// <response code="400">Parâmetros enviados estão incorretos</response>
+        /// <response code="422">Processamento encerrado, analise a mensagem retornada</response>
         [Route("{id:int}")]
         [HttpDelete]
         public async Task<ActionResult> DeleteAsync (int id)

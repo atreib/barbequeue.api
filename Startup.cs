@@ -16,6 +16,10 @@ using barbequeue.api.Data.UseCases;
 using barbequeue.api.Helpers.Jwt;
 using barbequeue.api.Helpers.Encrypter;
 using barbequeue.api.Helpers;
+using Microsoft.OpenApi.Models;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace barbequeue.api
 {
@@ -60,6 +64,32 @@ namespace barbequeue.api
                 };
             });
 
+            // configurating swagger
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "BarbeQUEUE API", 
+                    Version = "v1",
+                    Contact = new OpenApiContact
+                        {
+                            Name = "André Treib",
+                            Email = "andre.schumacher.treib@gmail.com"
+                        },
+                });
+                c.AddSecurityDefinition(
+                    "bearer",
+                    new OpenApiSecurityScheme {
+                        In = ParameterLocation.Header,
+                        Description = "Autenticação baseada em Json Web Token (JWT)",
+                        Name = "Authorization",
+                        Type = SecuritySchemeType.ApiKey
+                    }
+                );
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
+            services.AddSwaggerGenNewtonsoftSupport();
+
             services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("DevDatabase"));
             });
@@ -101,6 +131,10 @@ namespace barbequeue.api
             app.UseAuthentication();
 
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "BarbeQUEUE API v1");
+            });
         }
     }
 }

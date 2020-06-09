@@ -15,6 +15,13 @@ namespace barbequeue.api.Controllers
             _authService = authService;
         }
 
+        /// <summary>
+        /// Autenticação por usuário e senha
+        /// </summary>
+        /// <returns>Objeto do usuário com a JWT para utilização</returns>
+        /// <response code="200">Retorna o objeto do usuário com a JWT para utilização</response>
+        /// <response code="400">Parâmetros enviados estão incorretos</response>
+        /// <response code="422">Processamento encerrado, analise a mensagem retornada</response>
         [Route("")]
         [HttpPost]
         public async Task<ActionResult> LoginAsync([FromBody]LoginModel loginData)
