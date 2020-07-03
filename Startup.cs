@@ -91,8 +91,8 @@ namespace barbequeue.api
             services.AddSwaggerGenNewtonsoftSupport();
 
             services.AddDbContext<AppDbContext>(options => {
-                // options.UseSqlServer(Configuration.GetConnectionString("DevDatabase"));
-                options.UseInMemoryDatabase("restaurank-inmemory");
+                options.UseSqlServer(Configuration.GetConnectionString("ProdDatabase"));
+                // options.UseInMemoryDatabase("restaurank-inmemory");
             });
 
             services.AddScoped<IJwtGenerator, JwtGenerator>();
