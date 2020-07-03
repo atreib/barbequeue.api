@@ -108,12 +108,12 @@ namespace barbequeue.api
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             // uncomment this to recreate database
-            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            /*using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<AppDbContext>();
                 context.Database.EnsureDeleted();
                 context.Database.EnsureCreated();
-            }
+            }*/
 
             if (env.IsDevelopment())
             {
