@@ -40,6 +40,9 @@ namespace barbequeue.api.Infra.Db.SQLServer.Contexts
             builder.Entity<User>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<User>().Property(p => p.Username).IsRequired().HasMaxLength(128);   
             builder.Entity<User>().Property(p => p.Password).IsRequired().HasMaxLength(255);   
+            builder.Entity<User>().HasData(
+                new User { Id = 10, Username = "andre", Password = "$2b$12$F9IJedOAcH4QB/Jk3h3w9OTmo/UAIKf4dEJve1OcAd9TDZyG6zU4W" }
+            );
         }
     }
 }
